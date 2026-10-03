@@ -32,7 +32,7 @@ export async function commission(config){
 
   const bound=bindCase({projectId,caseId,repository,candidateRevision,mandate});
   const dir=`.plenum/cases/${bound.caseRunId}`;
-  const ledger=createDispatchLedger(bound,requiredAgents);
+  const ledger=createDispatchLedger(bound,requiredAgents,denominators);
   const workerRecords=[];
   persistJson(`${dir}/bound.json`,bound);
   if(selection) persistJson(`${dir}/selection.json`,selection);
@@ -51,7 +51,7 @@ export async function commission(config){
     try{
       const record=await executeWorker({agentId,projectId,caseId,candidateRevision,input});
       workerRecords.push(record);
-      ledger.executions.push({agentId,runId:record.run_id,disposition:record.disposition});
+      ledger.executions.push({agentId,runId:record.run_id,disposition:record.disposition,denominators:record.output?.denominators||[]});
     }catch(error){
       ledger.executions.push({agentId,disposition:"FAILED",error:String(error?.message||error)});
     }
