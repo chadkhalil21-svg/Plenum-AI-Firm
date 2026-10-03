@@ -1,0 +1,36 @@
+name: Commission Project 001
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  commission:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm install
+      - run: npm run validate
+      - run: npm run watchdog
+      - name: Execute independent agent commissioning
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.CLIENT_GITHUB_TOKEN }}
+          PLENUM_MODEL: ${{ vars.PLENUM_MODEL }}
+          PLENUM_MAX_TURNS: "20"
+        run: node runtime/commission-v2.mjs projects/001-american-rider/commission.json
+      - name: Preserve institutional evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: project-001-commissioning-evidence
+          path: .plenum/
+          if-no-files-found: error
+          retention-days: 90
