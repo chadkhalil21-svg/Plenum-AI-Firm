@@ -7,7 +7,24 @@
   "selectionMode": "orchestrated",
   "mandatoryAgents": [
     "repository_mapper",
+    "runtime_mapper",
+    "requirements_mapper",
+    "product_architect",
+    "journey_specialist",
+    "visual_design_specialist",
+    "language_editor",
+    "hospitality_service_specialist",
+    "accessibility_specialist",
+    "architecture_specialist",
+    "backend_data_specialist",
+    "security_privacy_specialist",
+    "safety_specialist",
+    "economics_payments_specialist",
+    "standards_researcher",
+    "design_council_researcher",
+    "omission_hunter",
     "completeness_auditor",
+    "should_be_architect",
     "authority_discovery_researcher",
     "authority_selection_auditor"
   ],
@@ -56,5 +73,5 @@
     "authority_selection_auditor",
     "independent_verifier"
   ],
-  "selectionPolicy": "Primary Orchestrator must select the smallest sufficient specialist set after grounding in the exact candidate. Supervisory Orchestrator independently reconstructs and challenges the proposed investigation universe before specialist execution. Any specialist required by either accepted plan is dispatched. Mandatory agents always run. Omission risk takes precedence over cost savings."
+  "selectionPolicy": "The Primary must first map the complete investigation universe for the whole product, not merely sample the repository. It must account for every applicable coverage denominator and house-standard domain before selecting optional specialists. Mandatory agents always run. Optional specialists may be omitted only with an explicit evidence-based non-applicability rationale. The Supervisor independently reconstructs the universe and adds any omitted specialist when material omission risk exists. Cost reduction never justifies an unexamined domain."
 }
