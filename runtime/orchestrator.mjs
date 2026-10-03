@@ -11,12 +11,13 @@ export function bindCase({ projectId, caseId, repository, candidateRevision, man
   });
 }
 
-export function createDispatchLedger(boundCase, requiredAgents) {
+export function createDispatchLedger(boundCase, requiredAgents, coverageDenominators = []) {
   if (!Array.isArray(requiredAgents) || requiredAgents.length === 0) throw new Error("Required agents missing.");
   return {
     caseRunId: boundCase.caseRunId,
     candidateRevision: boundCase.candidateRevision,
     requiredAgents: [...new Set(requiredAgents)],
+    coverageDenominators: [...new Set(coverageDenominators)],
     executions: [],
     unresolvedClaims: [],
     closureProposed: false,
