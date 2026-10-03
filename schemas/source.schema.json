@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Counsel Source Record",
+  "type": "object",
+  "required": [
+    "source_id",
+    "authority_class",
+    "publisher",
+    "title",
+    "locator",
+    "accessed_at",
+    "proposition",
+    "scope"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "authority_class": {
+      "type": "string"
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "locator": {
+      "type": "string"
+    },
+    "published_or_versioned_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "accessed_at": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "proposition": {
+      "type": "string"
+    },
+    "mandatory": {
+      "type": "boolean"
+    },
+    "counterevidence_checked": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
