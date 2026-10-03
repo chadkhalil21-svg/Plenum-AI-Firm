@@ -14,13 +14,14 @@ export async function commission(config){
   if(!process.env.GITHUB_TOKEN) throw new Error("GITHUB_TOKEN required for client evidence.");
 
   const {projectId,caseId,repository,candidateRevision,mandate}=config;
+  const denominators=JSON.parse(fs.readFileSync(new URL("../config/coverage-denominators.json",import.meta.url),"utf8")).software;
   let requiredAgents=config.requiredAgents;
   let selection=null;
   if(config.selectionMode==="orchestrated"){
     const candidates=config.candidateAgents||[];
     const mandatory=config.mandatoryAgents||[];
-    const planner=await executeWorker({agentId:"primary_orchestrator",projectId,caseId,candidateRevision,input:JSON.stringify({repository,candidateRevision,mandate,candidates,mandatory,selectionPolicy:config.selectionPolicy,instruction:"Ground yourself in the exact candidate. Return ONLY JSON with selectedAgents (agent IDs from candidates), rationale, coverageDomains, and knownRisks. Select the smallest sufficient set; mandatory agents must be included."})});
-    const challenger=await executeWorker({agentId:"supervisory_orchestrator",projectId,caseId,candidateRevision,input:JSON.stringify({repository,candidateRevision,mandate,candidates,mandatory,primarySelection:planner.output,selectionPolicy:config.selectionPolicy,instruction:"Independently reconstruct the investigation universe and challenge the Primary selection. Return ONLY JSON with addAgents, removeAgents, rationale, omittedDomains, and unresolvedRisks. Prefer adding a specialist when omission risk is material."})});
+    const planner=await executeWorker({agentId:"primary_orchestrator",projectId,caseId,candidateRevision,input:JSON.stringify({repository,candidateRevision,mandate,candidates,mandatory,coverageDenominators:denominators,selectionPolicy:config.selectionPolicy,instruction:"Inventory the exact candidate repository as a whole and map the complete investigation universe before selecting specialists. For every applicable coverage denominator, identify how it will be established or mark it unresolved. Return ONLY JSON with selectedAgents (agent IDs from candidates), rationale, coverageDomains, and knownRisks. Select the smallest sufficient set; mandatory agents must be included."})});
+    const challenger=await executeWorker({agentId:"supervisory_orchestrator",projectId,caseId,candidateRevision,input:JSON.stringify({repository,candidateRevision,mandate,candidates,mandatory,coverageDenominators:denominators,primarySelection:planner.output,selectionPolicy:config.selectionPolicy,instruction:"Independently reconstruct the investigation universe and challenge the Primary selection. Return ONLY JSON with addAgents, removeAgents, rationale, omittedDomains, and unresolvedRisks. Prefer adding a specialist when omission risk is material."})});
     const parse=x=>{try{return JSON.parse(String(x).replace(/^```json\\s*|```$/g,"").trim());}catch{return {};}};
     const p=parse(planner.output), s=parse(challenger.output);
     requiredAgents=[...new Set([...mandatory,...(p.selectedAgents||[]),...(s.addAgents||[])])].filter(x=>candidates.includes(x));
