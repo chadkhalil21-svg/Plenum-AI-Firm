@@ -13,6 +13,7 @@ export function evaluateWatchdog({ ledger, supervisor, claims = [] }) {
   }
 
   if (ledger.unresolvedClaims.length) failures.push("unresolved_claims");
+  if (!claims.length) failures.push("no_structured_claims");
   for (const claim of claims) {
     if (claim.candidate_revision !== ledger.candidateRevision) failures.push(`stale_claim:${claim.claim_id}`);
     if (claim.implementer && claim.verifier && claim.implementer === claim.verifier) failures.push(`self_verification:${claim.claim_id}`);
