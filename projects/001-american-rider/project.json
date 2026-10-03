@@ -1,0 +1,14 @@
+{
+  "project_id": "001-american-rider",
+  "name": "American Rider",
+  "client_repository": "chadkhalil21-svg/American-Rider",
+  "relationship": "commissioning_client",
+  "rules": {
+    "source_of_truth": "exact_candidate_revision",
+    "production_merge_requires_human_approval": true,
+    "historical_claims_are_not_current_evidence": true
+  },
+  "commissioning_cases": [
+    "INSURANCE-LAPSE-001"
+  ]
+}
