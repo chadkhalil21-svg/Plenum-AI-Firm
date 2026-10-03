@@ -4,7 +4,8 @@ import { liveWebSearch, researchInstructions } from "./tools/web.mjs";
 const researchAgents=new Set([
   "standards_researcher","business_institution_researcher","design_council_researcher",
   "comparative_intelligence","requirements_mapper","should_be_architect","first_principles_challenger",
-  "authority_discovery_researcher","authority_selection_auditor","idea_generator","novelty_prior_art_challenger"
+  "authority_discovery_researcher","authority_selection_auditor","idea_generator","novelty_prior_art_challenger",
+  "primary_orchestrator","supervisory_orchestrator","evidence_arbiter"
 ]);
 
 const repositoryAgents=new Set([
@@ -15,7 +16,8 @@ const repositoryAgents=new Set([
   "reliability_resilience_specialist","performance_scale_specialist","economics_payments_specialist",
   "operations_support_specialist","omission_hunter","contradiction_hunter","stale_claim_hunter",
   "journey_breaker","regression_hunter","unnecessary_thing_critic","completeness_auditor",
-  "should_be_architect","independent_verifier"
+  "should_be_architect","independent_verifier","primary_orchestrator","supervisory_orchestrator",
+  "authority_discovery_researcher","authority_selection_auditor","evidence_arbiter"
 ]);
 
 export function toolsForAgent(agentId){
