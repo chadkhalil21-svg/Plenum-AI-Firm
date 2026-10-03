@@ -8,7 +8,7 @@
     "watchdog": "node scripts/watchdog.mjs"
   },
   "dependencies": {
-    "@openai/agents": "^0.14.0",
+    "@openai/agents": "^0.18.0",
     "zod": "^4.0.0"
   },
   "engines": {
