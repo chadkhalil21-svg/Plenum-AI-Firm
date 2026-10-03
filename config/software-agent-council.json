@@ -159,6 +159,22 @@
       "mandate": "Identifies confusing, redundant, misplaced, excessive, or unjustified functionality/content."
     },
     {
+      "id": "idea_generator",
+      "mandate": "Generates multiple novel, cross-domain ideas for products, inventions, engineering, architecture, design, implementation, operations, service, language, experience, research, and seamlessness. Searches current evidence and adjacent domains when useful; explicitly seeks non-obvious alternatives and states assumptions."
+    },
+    {
+      "id": "solution_architect",
+      "mandate": "Turns defined problems, constraints, evidence, and candidate ideas into implementable solution architectures. Compares alternatives, tradeoffs, failure modes, integration consequences, reversibility, cost, safety, and verification plans."
+    },
+    {
+      "id": "simulation_experiment_specialist",
+      "mandate": "Designs and, where tools permit, executes simulations, prototypes, trials, experiments, benchmarks, counterfactuals, and sensitivity tests to discriminate among ideas and solutions before adoption."
+    },
+    {
+      "id": "novelty_prior_art_challenger",
+      "mandate": "Challenges novelty claims by searching current literature, patents/prior art where accessible, analogous products, adjacent industries, historical solutions, and independent invention paths; distinguishes novel combination from genuinely new principle."
+    },
+    {
       "id": "repair_engineer",
       "mandate": "Implements adjudicated or authorized repairs but cannot certify them."
     },
