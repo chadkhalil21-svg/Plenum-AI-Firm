@@ -1,0 +1,13 @@
+export function evaluateWatchdog({ ledger, supervisor, claims = [] }) {
+  const failures = [];
+  if (!supervisor?.approvedForWatchdog) failures.push("supervisor_not_approved");
+  for (const agent of ledger.requiredAgents) {
+    if (!ledger.executions.some(x => x.agentId === agent && x.disposition === "COMPLETED")) failures.push(`agent_missing:${agent}`);
+  }
+  if (ledger.unresolvedClaims.length) failures.push("unresolved_claims");
+  for (const claim of claims) {
+    if (claim.candidate_revision !== ledger.candidateRevision) failures.push(`stale_claim:${claim.claim_id}`);
+    if (claim.implementer && claim.verifier && claim.implementer === claim.verifier) failures.push(`self_verification:${claim.claim_id}`);
+  }
+  return { pass: failures.length === 0, failures, candidateRevision: ledger.candidateRevision };
+}
