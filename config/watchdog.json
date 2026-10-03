@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "blocking_invariants": [
+    "candidate_revision_present",
+    "evidence_revision_matches_candidate_or_invariance_recorded",
+    "all_required_denominators_reconciled",
+    "no_required_agent_silently_skipped",
+    "not_tested_never_coerced_to_pass",
+    "implementer_differs_from_verifier_for_material_repairs",
+    "arbiter_does_not_implement_repairs",
+    "primary_orchestrator_does_not_self_certify",
+    "supervisory_orchestrator_review_present_before_closure",
+    "no_unresolved_blocking_claims",
+    "external_claims_have_source_date_and_scope",
+    "human_approval_present_for_production_or_destructive_action"
+  ],
+  "failure_policy": "FAIL_CLOSED"
+}
