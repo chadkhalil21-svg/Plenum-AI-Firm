@@ -1,6 +1,7 @@
 import { Agent } from "@openai/agents";
 import fs from "node:fs";
 import { toolsForAgent, extraInstructionsForAgent } from "./tool-policy.mjs";
+import { workerOutputSchema } from "./output-schema.mjs";
 
 const council=JSON.parse(fs.readFileSync("config/software-agent-council.json","utf8"));
 
@@ -20,7 +21,8 @@ export const agents=new Map(council.agents.filter(x=>x.id!=="deterministic_watch
     name:spec.id,
     model:process.env.PLENUM_MODEL || "gpt-5.6-sol",
     instructions:`${constitution}\n${extraInstructionsForAgent(spec.id)}\nBounded mandate: ${spec.mandate}`,
-    tools:toolsForAgent(spec.id)
+    tools:toolsForAgent(spec.id),
+    outputType: workerOutputSchema
   })
 ]));
 
