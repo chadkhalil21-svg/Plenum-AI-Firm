@@ -23,7 +23,16 @@ export const workerOutputSchema=z.object({
     evidence:z.string()
   })),
   omissions:z.array(z.string()),
-  not_tested:z.array(z.string())
+  not_tested:z.array(z.string()),
+  selectedAgents:z.array(z.string()).optional(),
+  addAgents:z.array(z.string()).optional(),
+  removeAgents:z.array(z.string()).optional(),
+  rationale:z.string().optional(),
+  coverageDomains:z.array(z.string()).optional(),
+  knownRisks:z.array(z.string()).optional(),
+  omittedDomains:z.array(z.string()).optional(),
+  unresolvedRisks:z.array(z.string()).optional(),
+  denominatorPlan:z.array(z.object({name:z.string(),method:z.string(),status:z.enum(["PLANNED","NOT_APPLICABLE","UNRESOLVED"])})).optional()
 });
 
 export const selectionOutputSchema=z.object({
