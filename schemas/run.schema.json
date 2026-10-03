@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agent Execution Record",
+  "type": "object",
+  "required": [
+    "run_id",
+    "project_id",
+    "case_id",
+    "agent_id",
+    "candidate_revision",
+    "provider",
+    "model",
+    "started_at",
+    "ended_at",
+    "input_hash",
+    "output_hash",
+    "tool_events",
+    "disposition"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string"
+    },
+    "candidate_revision": {
+      "type": "string",
+      "minLength": 7
+    },
+    "provider": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "ended_at": {
+      "type": "string"
+    },
+    "input_hash": {
+      "type": "string"
+    },
+    "output_hash": {
+      "type": "string"
+    },
+    "tool_events": {
+      "type": "array"
+    },
+    "disposition": {
+      "enum": [
+        "COMPLETED",
+        "FAILED",
+        "NOT_TESTED",
+        "BLOCKED"
+      ]
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}
