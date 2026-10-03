@@ -1,5 +1,6 @@
 import { githubTools } from "./tools/github.mjs";
 import { liveWebSearch, researchInstructions } from "./tools/web.mjs";
+import { githubRepairTools } from "./tools/github-repair.mjs";
 
 const researchAgents=new Set([
   "standards_researcher","business_institution_researcher","design_council_researcher",
@@ -23,6 +24,7 @@ const repositoryAgents=new Set([
 export function toolsForAgent(agentId){
   const tools=[];
   if(repositoryAgents.has(agentId)) tools.push(...githubTools);
+  if(agentId==="repair_engineer" && process.env.PLENUM_REPAIR_AUTHORIZED==="true") tools.push(...githubTools,...githubRepairTools);
   if(researchAgents.has(agentId)) tools.push(liveWebSearch);
   return tools;
 }
