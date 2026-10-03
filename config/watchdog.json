@@ -12,7 +12,9 @@
     "supervisory_orchestrator_review_present_before_closure",
     "no_unresolved_blocking_claims",
     "external_claims_have_source_date_and_scope",
-    "human_approval_present_for_production_or_destructive_action"
+    "human_approval_present_for_production_or_destructive_action",
+    "authority_discovery_present_for_material_should_be_claims",
+    "authority_selection_independently_audited"
   ],
   "failure_policy": "FAIL_CLOSED"
 }
