@@ -2,6 +2,15 @@ name: Commission Project 001
 
 on:
   workflow_dispatch:
+    inputs:
+      scope:
+        description: Commissioning scope
+        required: true
+        default: comprehensive
+        type: choice
+        options:
+          - comprehensive
+          - insurance-lapse
 
 permissions:
   contents: read
@@ -9,7 +18,7 @@ permissions:
 jobs:
   commission:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -19,18 +28,27 @@ jobs:
       - run: npm install
       - run: npm run validate
       - run: npm run watchdog
+      - name: Select commissioning manifest
+        id: manifest
+        shell: bash
+        run: |
+          if [ "${{ inputs.scope }}" = "insurance-lapse" ]; then
+            echo "path=projects/001-american-rider/commission.json" >> "$GITHUB_OUTPUT"
+          else
+            echo "path=projects/001-american-rider/comprehensive-commission.json" >> "$GITHUB_OUTPUT"
+          fi
       - name: Execute independent agent commissioning
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.CLIENT_GITHUB_TOKEN }}
           PLENUM_MODEL: ${{ vars.PLENUM_MODEL }}
           PLENUM_MAX_TURNS: "20"
-        run: node runtime/commission-v2.mjs projects/001-american-rider/commission.json
+        run: node runtime/commission-v2.mjs "${{ steps.manifest.outputs.path }}"
       - name: Preserve institutional evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: project-001-commissioning-evidence
+          name: project-001-commissioning-evidence-${{ inputs.scope }}
           path: .plenum/
           if-no-files-found: error
           retention-days: 90
