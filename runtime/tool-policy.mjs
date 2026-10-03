@@ -3,7 +3,8 @@ import { liveWebSearch, researchInstructions } from "./tools/web.mjs";
 
 const researchAgents=new Set([
   "standards_researcher","business_institution_researcher","design_council_researcher",
-  "comparative_intelligence","requirements_mapper","should_be_architect","first_principles_challenger"
+  "comparative_intelligence","requirements_mapper","should_be_architect","first_principles_challenger",
+  "authority_discovery_researcher","authority_selection_auditor","idea_generator","novelty_prior_art_challenger"
 ]);
 
 const repositoryAgents=new Set([
