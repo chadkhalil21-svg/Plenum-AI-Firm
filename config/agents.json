@@ -1,0 +1,181 @@
+{
+  "schema_version": "0.1.0",
+  "agents": [
+    {
+      "id": "primary_orchestrator",
+      "class": "orchestrator",
+      "authority": [
+        "decompose_mandate",
+        "dispatch",
+        "synthesize"
+      ],
+      "forbidden": [
+        "self_certify"
+      ]
+    },
+    {
+      "id": "supervisory_orchestrator",
+      "class": "supervisor",
+      "authority": [
+        "audit_plan",
+        "audit_coverage",
+        "challenge_closure"
+      ],
+      "forbidden": [
+        "silently_rewrite_primary_record",
+        "self_certify"
+      ]
+    },
+    {
+      "id": "repository_mapper",
+      "class": "ground_truth",
+      "authority": [
+        "map_repository",
+        "establish_denominators"
+      ]
+    },
+    {
+      "id": "runtime_mapper",
+      "class": "ground_truth",
+      "authority": [
+        "trace_runtime",
+        "map_side_effects"
+      ]
+    },
+    {
+      "id": "requirements_mapper",
+      "class": "ground_truth",
+      "authority": [
+        "map_requirements",
+        "bind_sources"
+      ]
+    },
+    {
+      "id": "historical_claim_reconciler",
+      "class": "ground_truth",
+      "authority": [
+        "reconcile_prior_claims",
+        "search_current_implementation"
+      ]
+    },
+    {
+      "id": "architecture_specialist",
+      "class": "specialist",
+      "authority": [
+        "review_architecture"
+      ]
+    },
+    {
+      "id": "security_privacy_specialist",
+      "class": "specialist",
+      "authority": [
+        "review_security_privacy"
+      ]
+    },
+    {
+      "id": "product_journey_specialist",
+      "class": "specialist",
+      "authority": [
+        "review_product_journeys"
+      ]
+    },
+    {
+      "id": "ux_accessibility_specialist",
+      "class": "specialist",
+      "authority": [
+        "review_ux_accessibility"
+      ]
+    },
+    {
+      "id": "reliability_specialist",
+      "class": "specialist",
+      "authority": [
+        "review_reliability"
+      ]
+    },
+    {
+      "id": "economics_specialist",
+      "class": "specialist",
+      "authority": [
+        "review_economics"
+      ]
+    },
+    {
+      "id": "omission_hunter",
+      "class": "adversarial",
+      "authority": [
+        "seek_omissions"
+      ]
+    },
+    {
+      "id": "contradiction_hunter",
+      "class": "adversarial",
+      "authority": [
+        "seek_contradictions"
+      ]
+    },
+    {
+      "id": "stale_claim_hunter",
+      "class": "adversarial",
+      "authority": [
+        "seek_stale_claims"
+      ]
+    },
+    {
+      "id": "journey_breaker",
+      "class": "adversarial",
+      "authority": [
+        "seek_bypasses",
+        "break_journeys"
+      ]
+    },
+    {
+      "id": "regression_hunter",
+      "class": "adversarial",
+      "authority": [
+        "seek_regressions"
+      ]
+    },
+    {
+      "id": "repair_engineer",
+      "class": "implementation",
+      "authority": [
+        "propose_repairs",
+        "implement_authorized_repairs"
+      ],
+      "forbidden": [
+        "certify_own_repair"
+      ]
+    },
+    {
+      "id": "independent_verifier",
+      "class": "verification",
+      "authority": [
+        "retest",
+        "verify_repair"
+      ],
+      "forbidden": [
+        "verify_own_implementation"
+      ]
+    },
+    {
+      "id": "evidence_arbiter",
+      "class": "adjudication",
+      "authority": [
+        "adjudicate",
+        "issue_disposition"
+      ],
+      "forbidden": [
+        "repair_code"
+      ]
+    },
+    {
+      "id": "deterministic_watchdog",
+      "class": "deterministic",
+      "authority": [
+        "enforce_invariants"
+      ],
+      "model": false
+    }
+  ]
+}
