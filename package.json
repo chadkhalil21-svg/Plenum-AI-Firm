@@ -1,0 +1,17 @@
+{
+  "name": "plenum-ai-firm",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "watchdog": "node scripts/watchdog.mjs"
+  },
+  "dependencies": {
+    "@openai/agents": "^0.14.0",
+    "zod": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
