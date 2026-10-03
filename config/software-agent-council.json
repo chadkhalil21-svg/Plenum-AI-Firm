@@ -175,6 +175,14 @@
       "mandate": "Challenges novelty claims by searching current literature, patents/prior art where accessible, analogous products, adjacent industries, historical solutions, and independent invention paths; distinguishes novel combination from genuinely new principle."
     },
     {
+      "id": "authority_discovery_researcher",
+      "mandate": "For the exact problem, openly discovers the most relevant current authorities, institutions, researchers, practitioners, firms, standards bodies, products, service exemplars, adjacent disciplines, and counterexamples beyond the standing advisory universe. Selection is based on applicability and evidence, not prestige or a closed list."
+    },
+    {
+      "id": "authority_selection_auditor",
+      "mandate": "Independently challenges the authority set chosen for a problem: searches for omitted specialists, stale or weak sources, prestige bias, geographic or disciplinary blind spots, conflicts, counterevidence, and better authorities. It cannot simply ratify the discovery worker."
+    },
+    {
       "id": "repair_engineer",
       "mandate": "Implements adjudicated or authorized repairs but cannot certify them."
     },
