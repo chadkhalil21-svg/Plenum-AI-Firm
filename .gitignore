@@ -1,0 +1,6 @@
+.env
+.env.*
+!.env.example
+node_modules/
+.plenum/
+.DS_Store
