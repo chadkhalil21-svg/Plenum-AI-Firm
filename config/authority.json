@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.1.0",
+  "closure": {
+    "primary_orchestrator": "MAY_PROPOSE",
+    "supervisory_orchestrator": "MAY_VETO_OR_RETURN",
+    "deterministic_watchdog": "MUST_PASS",
+    "evidence_arbiter": "MUST_ADJUDICATE",
+    "human_release_authority": "REQUIRED_WHEN_CONFIGURED"
+  },
+  "separation": [
+    [
+      "repair_engineer",
+      "independent_verifier"
+    ],
+    [
+      "repair_engineer",
+      "evidence_arbiter"
+    ],
+    [
+      "primary_orchestrator",
+      "supervisory_orchestrator"
+    ]
+  ],
+  "forbidden": [
+    "model_confidence_as_evidence",
+    "silent_agent_substitution",
+    "silent_scope_reduction",
+    "silent_not_tested_to_pass",
+    "certification_after_candidate_revision_changes_without_revalidation"
+  ]
+}
