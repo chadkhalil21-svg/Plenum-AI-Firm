@@ -1,0 +1,29 @@
+{
+  "case_id": "INSURANCE-LAPSE-001",
+  "proposition": "An Operator whose qualifying insurance has expired or otherwise fails the continuing-coverage gate cannot commence operations or accept Travel.",
+  "purpose": "Regression case proving that the Firm discovers existing current enforcement before alleging absence.",
+  "required_traces": [
+    "insurance document expiry or current status",
+    "qualification blocker",
+    "commence-operations gate",
+    "accept-Travel gate",
+    "operator-facing explanation",
+    "recovery path",
+    "bypass attempt"
+  ],
+  "anti_stale_claim_rule": "Search the exact candidate revision for existing implementation, tests, and runtime consequences before any absence finding.",
+  "required_agents": [
+    "repository_mapper",
+    "runtime_mapper",
+    "historical_claim_reconciler",
+    "product_journey_specialist",
+    "stale_claim_hunter",
+    "journey_breaker",
+    "independent_verifier",
+    "evidence_arbiter"
+  ],
+  "closure_requires": [
+    "deterministic_watchdog_pass",
+    "supervisory_orchestrator_review"
+  ]
+}
