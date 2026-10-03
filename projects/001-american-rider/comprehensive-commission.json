@@ -4,7 +4,14 @@
   "repository": "chadkhalil21-svg/American-Rider",
   "candidateRevision": "f749644c862e1da128359ddf2693a95506b9b52a",
   "mandate": "Comprehensively investigate the exact American Rider candidate as a whole product and institution. Establish what exists before alleging absence. Examine every applicable screen, state, journey, control, consequence, backend behavior, integration, requirement, security/privacy/safety property, economics/payment path, accessibility/localization/device behavior, reliability/performance concern, design and visual craft, language and terminology, first-class hospitality and recovery behavior, institutional character, house rubric, current external standards and comparative practice. Determine what is broken, missing, contradictory, stale, unnecessary, misplaced, insufficient, overcomplicated, or not yet accounted for; ask what should exist instead and what the investigation itself may have omitted. Distinguish evidence, recommendation, hypothesis and NOT_TESTED. Do not certify completeness without reconciled denominators and independent supervisory challenge.",
-  "requiredAgents": [
+  "selectionMode": "orchestrated",
+  "mandatoryAgents": [
+    "repository_mapper",
+    "completeness_auditor",
+    "authority_discovery_researcher",
+    "authority_selection_auditor"
+  ],
+  "candidateAgents": [
     "repository_mapper",
     "runtime_mapper",
     "requirements_mapper",
@@ -48,5 +55,6 @@
     "authority_discovery_researcher",
     "authority_selection_auditor",
     "independent_verifier"
-  ]
+  ],
+  "selectionPolicy": "Primary Orchestrator must select the smallest sufficient specialist set after grounding in the exact candidate. Supervisory Orchestrator independently reconstructs and challenges the proposed investigation universe before specialist execution. Any specialist required by either accepted plan is dispatched. Mandatory agents always run. Omission risk takes precedence over cost savings."
 }
