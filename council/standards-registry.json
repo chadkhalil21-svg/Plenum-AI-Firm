@@ -1,0 +1,234 @@
+{
+  "schema_version": "0.1.0",
+  "policy": {
+    "research_before_substantive_judgment": true,
+    "prefer_primary_sources": true,
+    "record_access_date": true,
+    "distinguish_authority_class": true,
+    "no_recommendation_may_be_misrepresented_as_law": true,
+    "house_standard_may_exceed_external_minimums": true,
+    "conflicts_require_explicit_adjudication": true
+  },
+  "authority_classes": [
+    "law",
+    "regulation",
+    "formal_standard",
+    "platform_requirement",
+    "government_guidance",
+    "institutional_research",
+    "engineering_practice",
+    "design_guidance",
+    "hospitality_reference",
+    "house_standard",
+    "historical_lens"
+  ],
+  "sources": [
+    {
+      "id": "apple-hig",
+      "name": "Apple Human Interface Guidelines",
+      "class": "platform_requirement",
+      "domains": [
+        "interaction",
+        "visual_design",
+        "writing",
+        "accessibility",
+        "platform_conventions"
+      ],
+      "official": "https://developer.apple.com/design/human-interface-guidelines/"
+    },
+    {
+      "id": "uswds",
+      "name": "U.S. Web Design System",
+      "class": "government_guidance",
+      "domains": [
+        "trust",
+        "accessibility",
+        "forms",
+        "content",
+        "interaction"
+      ],
+      "official": "https://designsystem.digital.gov/"
+    },
+    {
+      "id": "wcag",
+      "name": "W3C Web Content Accessibility Guidelines",
+      "class": "formal_standard",
+      "domains": [
+        "accessibility"
+      ],
+      "official": "https://www.w3.org/WAI/standards-guidelines/wcag/"
+    },
+    {
+      "id": "nist-ssdf",
+      "name": "NIST Secure Software Development Framework",
+      "class": "government_guidance",
+      "domains": [
+        "security",
+        "software_lifecycle",
+        "supply_chain"
+      ],
+      "official": "https://csrc.nist.gov/projects/ssdf/"
+    },
+    {
+      "id": "nist-ai-rmf",
+      "name": "NIST AI Risk Management Framework",
+      "class": "government_guidance",
+      "domains": [
+        "ai_governance",
+        "risk",
+        "trustworthiness"
+      ],
+      "official": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    {
+      "id": "nasa-se",
+      "name": "NASA Systems Engineering",
+      "class": "government_guidance",
+      "domains": [
+        "systems_engineering",
+        "verification",
+        "validation",
+        "risk"
+      ],
+      "official": "https://www.nasa.gov/reference/systems-engineering-handbook/"
+    },
+    {
+      "id": "thoughtworks",
+      "name": "Thoughtworks",
+      "class": "engineering_practice",
+      "domains": [
+        "architecture",
+        "delivery",
+        "testing",
+        "fitness_functions"
+      ],
+      "official": "https://www.thoughtworks.com/"
+    },
+    {
+      "id": "ideo",
+      "name": "IDEO",
+      "class": "design_guidance",
+      "domains": [
+        "human_centered_design",
+        "service_design",
+        "innovation"
+      ],
+      "official": "https://www.ideo.com/"
+    },
+    {
+      "id": "hbs",
+      "name": "Harvard Business School",
+      "class": "institutional_research",
+      "domains": [
+        "strategy",
+        "operations",
+        "organization",
+        "customer_value"
+      ],
+      "official": "https://www.hbs.edu/"
+    },
+    {
+      "id": "stanford-gsb",
+      "name": "Stanford Graduate School of Business",
+      "class": "institutional_research",
+      "domains": [
+        "strategy",
+        "organization",
+        "innovation"
+      ],
+      "official": "https://www.gsb.stanford.edu/"
+    },
+    {
+      "id": "stanford-dschool",
+      "name": "Stanford d.school",
+      "class": "institutional_research",
+      "domains": [
+        "human_centered_design",
+        "prototyping",
+        "design_research"
+      ],
+      "official": "https://dschool.stanford.edu/"
+    },
+    {
+      "id": "mit-sloan",
+      "name": "MIT Sloan School of Management",
+      "class": "institutional_research",
+      "domains": [
+        "operations",
+        "digital_strategy",
+        "ai",
+        "organization"
+      ],
+      "official": "https://mitsloan.mit.edu/"
+    },
+    {
+      "id": "princeton",
+      "name": "Princeton University",
+      "class": "institutional_research",
+      "domains": [
+        "computer_science",
+        "hci",
+        "policy",
+        "ethics"
+      ],
+      "official": "https://www.princeton.edu/"
+    },
+    {
+      "id": "nng",
+      "name": "Nielsen Norman Group",
+      "class": "design_guidance",
+      "domains": [
+        "usability",
+        "interaction",
+        "research"
+      ],
+      "official": "https://www.nngroup.com/"
+    },
+    {
+      "id": "emirates",
+      "name": "Emirates",
+      "class": "hospitality_reference",
+      "domains": [
+        "first_class_hospitality",
+        "service"
+      ],
+      "official": "https://www.emirates.com/"
+    },
+    {
+      "id": "american-rider-house",
+      "name": "American Rider House Standard",
+      "class": "house_standard",
+      "domains": [
+        "language",
+        "design",
+        "service",
+        "product"
+      ],
+      "principles": [
+        "institutional",
+        "authoritative",
+        "sophisticated",
+        "first-class hospitality",
+        "quiet authority",
+        "composure",
+        "restraint",
+        "precision",
+        "clarity",
+        "seamlessness",
+        "warmth without informality"
+      ]
+    },
+    {
+      "id": "historical-council",
+      "name": "Ford / Rockefeller / Jobs analytical lenses",
+      "class": "historical_lens",
+      "domains": [
+        "systems",
+        "scale",
+        "operations",
+        "product"
+      ],
+      "rule": "Analytical lenses only; never treated as current authority, endorsement, or substitute for evidence."
+    }
+  ]
+}
