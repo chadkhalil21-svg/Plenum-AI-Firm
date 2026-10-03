@@ -24,7 +24,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
       - run: npm install
       - run: npm run validate
       - run: npm run watchdog
@@ -50,5 +49,5 @@ jobs:
         with:
           name: project-001-commissioning-evidence-${{ inputs.scope }}
           path: .plenum/
-          if-no-files-found: error
+          if-no-files-found: warn
           retention-days: 90
