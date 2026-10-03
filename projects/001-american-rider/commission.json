@@ -2,7 +2,7 @@
   "projectId": "001-american-rider",
   "caseId": "INSURANCE-LAPSE-001",
   "repository": "chadkhalil21-svg/American-Rider",
-  "candidateRevision": "REPLACE_WITH_EXACT_SHA_AT_EXECUTION",
+  "candidateRevision": "f749644c862e1da128359ddf2693a95506b9b52a",
   "mandate": "Determine from the exact candidate revision whether an Operator whose qualifying insurance has expired or otherwise fails continuing-coverage can commence operations or accept Travel. Discover existing implementation before alleging absence. Trace user-facing explanation, recovery, and bypass attempts. Also identify material should-be gaps without confusing recommendations with existing defects.",
   "requiredAgents": [
     "repository_mapper",
