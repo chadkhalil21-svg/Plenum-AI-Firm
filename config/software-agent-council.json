@@ -1,0 +1,178 @@
+{
+  "schema_version": "0.2.0",
+  "purpose": "Software and digital-platform council",
+  "agents": [
+    {
+      "id": "primary_orchestrator",
+      "mandate": "Plans the investigation and dispatches bounded work."
+    },
+    {
+      "id": "supervisory_orchestrator",
+      "mandate": "Independently audits the Primary plan, coverage, assumptions, omissions, and proposed closure."
+    },
+    {
+      "id": "completeness_auditor",
+      "mandate": "Reconciles declared denominators against actual reviewed/tested items."
+    },
+    {
+      "id": "should_be_architect",
+      "mandate": "Asks what should exist, what should not exist, and why."
+    },
+    {
+      "id": "omission_hunter",
+      "mandate": "Searches for missing functionality, states, controls, recovery paths, requirements, and integrations."
+    },
+    {
+      "id": "comparative_intelligence",
+      "mandate": "Researches how leading products and institutions solve comparable problems using current web evidence."
+    },
+    {
+      "id": "first_principles_challenger",
+      "mandate": "Challenges inherited assumptions and conventional solutions."
+    },
+    {
+      "id": "repository_mapper",
+      "mandate": "Maps the exact candidate revision and establishes code denominators."
+    },
+    {
+      "id": "runtime_mapper",
+      "mandate": "Traces runtime behavior, side effects, gates, and integrations."
+    },
+    {
+      "id": "requirements_mapper",
+      "mandate": "Maps law, regulation, formal standards, platform requirements, provider requirements, and house standards."
+    },
+    {
+      "id": "historical_claim_reconciler",
+      "mandate": "Prevents stale findings by searching current implementation and tests first."
+    },
+    {
+      "id": "product_architect",
+      "mandate": "Reviews product model, feature boundaries, appropriateness, completeness, and coherence."
+    },
+    {
+      "id": "information_architect",
+      "mandate": "Reviews hierarchy, placement, navigation, grouping, discoverability, and cognitive structure."
+    },
+    {
+      "id": "journey_specialist",
+      "mandate": "Reviews complete user journeys across roles and states."
+    },
+    {
+      "id": "interaction_specialist",
+      "mandate": "Reviews every actionable control, gesture, field, modal, drawer, transition, and consequence."
+    },
+    {
+      "id": "visual_design_specialist",
+      "mandate": "Reviews typography, spacing, proportion, hierarchy, color, iconography, rhythm, density, and craft."
+    },
+    {
+      "id": "language_editor",
+      "mandate": "Reviews proper natural English, terminology, economy, sufficiency, sophistication, tone, state clarity, and recovery clarity."
+    },
+    {
+      "id": "hospitality_service_specialist",
+      "mandate": "Reviews anticipation, continuity, dignity, reassurance through clarity, respectful recovery, and first-class service behavior."
+    },
+    {
+      "id": "comprehension_specialist",
+      "mandate": "Tests whether intended users can understand information and decisions without insider knowledge."
+    },
+    {
+      "id": "accessibility_specialist",
+      "mandate": "Reviews visual, motor, cognitive, auditory, semantic, assistive-technology, and large-text accessibility."
+    },
+    {
+      "id": "responsive_device_specialist",
+      "mandate": "Reviews relevant devices, viewports, orientations, keyboards, safe areas, text scaling, and input modes."
+    },
+    {
+      "id": "localization_specialist",
+      "mandate": "Reviews translation resilience, cultural fit, formatting, expansion, terminology, and semantic equivalence."
+    },
+    {
+      "id": "architecture_specialist",
+      "mandate": "Reviews system architecture, boundaries, coupling, invariants, interfaces, and evolution."
+    },
+    {
+      "id": "backend_data_specialist",
+      "mandate": "Reviews APIs, persistence, authorization, consistency, idempotency, concurrency, and data lifecycle."
+    },
+    {
+      "id": "security_privacy_specialist",
+      "mandate": "Reviews threat surfaces, least privilege, data protection, abuse, secrets, dependencies, and privacy."
+    },
+    {
+      "id": "safety_specialist",
+      "mandate": "Reviews physical/user safety mechanisms, escalation, misuse, emergency, and recovery."
+    },
+    {
+      "id": "reliability_resilience_specialist",
+      "mandate": "Reviews failures, retries, degradation, observability, recovery, dependency outages, and operational resilience."
+    },
+    {
+      "id": "performance_scale_specialist",
+      "mandate": "Reviews latency, resource use, capacity, concurrency, stress, and scaling failure modes."
+    },
+    {
+      "id": "economics_payments_specialist",
+      "mandate": "Reviews pricing, money movement, reconciliation, incentives, reserves, fees, edge economics, and financial failure states."
+    },
+    {
+      "id": "operations_support_specialist",
+      "mandate": "Reviews operational tooling, exception handling, support, incident response, manual intervention, and lifecycle closure."
+    },
+    {
+      "id": "standards_researcher",
+      "mandate": "Retrieves current primary authoritative guidance and records authority class, date, scope, and proposition."
+    },
+    {
+      "id": "business_institution_researcher",
+      "mandate": "Consults relevant current business/operations research and leading institutional practice."
+    },
+    {
+      "id": "design_council_researcher",
+      "mandate": "Consults current platform guidance, leading design firms, HCI/usability research, and premium service references."
+    },
+    {
+      "id": "contradiction_hunter",
+      "mandate": "Searches for contradictions between screens, code, policy, requirements, economics, and states."
+    },
+    {
+      "id": "stale_claim_hunter",
+      "mandate": "Challenges findings against current exact-revision evidence."
+    },
+    {
+      "id": "journey_breaker",
+      "mandate": "Attempts bypasses, interrupted journeys, invalid transitions, and hostile sequences."
+    },
+    {
+      "id": "stress_chaos_tester",
+      "mandate": "Exercises load, timing, dependency, race, failure, malformed-input, and recovery conditions."
+    },
+    {
+      "id": "regression_hunter",
+      "mandate": "Searches for collateral damage and previously closed failures."
+    },
+    {
+      "id": "unnecessary_thing_critic",
+      "mandate": "Identifies confusing, redundant, misplaced, excessive, or unjustified functionality/content."
+    },
+    {
+      "id": "repair_engineer",
+      "mandate": "Implements adjudicated or authorized repairs but cannot certify them."
+    },
+    {
+      "id": "independent_verifier",
+      "mandate": "Re-executes relevant verification on the resulting immutable revision."
+    },
+    {
+      "id": "evidence_arbiter",
+      "mandate": "Adjudicates normalized evidence and conflicts; cannot repair code."
+    },
+    {
+      "id": "deterministic_watchdog",
+      "mandate": "Non-model enforcement of coverage, separation, evidence, revision, and closure invariants."
+    }
+  ]
+}
