@@ -35,5 +35,16 @@ for (const id of ["primary_orchestrator","supervisory_orchestrator","determinist
   }
 }
 
+
+const council=JSON.parse(fs.readFileSync("config/software-agent-council.json","utf8"));
+const councilIds=new Set(council.agents.map(x=>x.id));
+for(const manifestPath of ["projects/001-american-rider/comprehensive-commission.json","projects/001-american-rider/product-development-commission.json"]){
+  const manifest=JSON.parse(fs.readFileSync(manifestPath,"utf8"));
+  for(const id of [...(manifest.mandatoryAgents||[]),...(manifest.candidateAgents||[])]){
+    if(!councilIds.has(id)){ console.error("UNKNOWN_MANIFEST_AGENT",manifestPath,id); failed=true; }
+  }
+}
+if(!fs.existsSync("runtime/output-schema.mjs")){ console.error("MISSING_OUTPUT_SCHEMA"); failed=true; }
+
 if (failed) process.exit(1);
 console.log("Plenum AI Firm institutional configuration: VALID");
