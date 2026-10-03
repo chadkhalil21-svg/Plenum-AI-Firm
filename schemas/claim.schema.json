@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Plenum Claim",
+  "type": "object",
+  "required": [
+    "claim_id",
+    "project_id",
+    "repository",
+    "candidate_revision",
+    "proposition",
+    "status",
+    "evidence"
+  ],
+  "properties": {
+    "claim_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "repository": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_revision": {
+      "type": "string",
+      "minLength": 7
+    },
+    "proposition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "PROPOSED",
+        "REVIEWED",
+        "VERIFIED",
+        "DEFECT",
+        "EXTERNAL_BLOCKER",
+        "NOT_TESTED",
+        "NOT_APPLICABLE",
+        "UNRESOLVED"
+      ]
+    },
+    "expected": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "observed": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence"
+      }
+    },
+    "implementer": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "verifier": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "arbiter": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "required": [
+        "kind",
+        "revision",
+        "locator"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "source",
+            "test",
+            "runtime",
+            "external",
+            "trace",
+            "artifact"
+          ]
+        },
+        "revision": {
+          "type": "string"
+        },
+        "locator": {
+          "type": "string"
+        },
+        "proposition": {
+          "type": "string"
+        },
+        "executed": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
