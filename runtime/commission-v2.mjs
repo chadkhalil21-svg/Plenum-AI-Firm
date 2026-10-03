@@ -30,8 +30,8 @@ export async function commission(config){
   if(candidateRevision.startsWith("REPLACE_")) throw new Error("Exact candidate revision required.");
 
   const bound=bindCase({projectId,caseId,repository,candidateRevision,mandate});
-  const ledger=createDispatchLedger(bound,requiredAgents);
   const dir=`.plenum/cases/${bound.caseRunId}`;
+  const ledger=createDispatchLedger(bound,requiredAgents);
   const workerRecords=[];
   persistJson(`${dir}/bound.json`,bound);
   if(selection) persistJson(`${dir}/selection.json`,selection);
